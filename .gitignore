@@ -75,3 +75,11 @@ config.yaml
 # Environment variables (if any)
 .env
 .env.local
+
+# Build artifacts
+build/
+dist/
+*.spec
+*.AppImage
+*.AppDir
+appimagetool*.AppImage

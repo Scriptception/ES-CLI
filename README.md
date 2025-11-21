@@ -13,6 +13,25 @@ A ncurses-based command-line interface for Elasticsearch, similar to Kibana but 
 
 ## Installation
 
+### Option 1: AppImage (Recommended for Linux)
+
+Download the latest AppImage from the [Releases](https://github.com/yourusername/ES-CLI/releases) page:
+
+```bash
+# Download the AppImage
+wget https://github.com/yourusername/ES-CLI/releases/latest/download/ES-CLI-x86_64.AppImage
+
+# Make it executable
+chmod +x ES-CLI-x86_64.AppImage
+
+# Run it
+./ES-CLI-x86_64.AppImage
+```
+
+The AppImage is a standalone executable that includes all dependencies - no installation required!
+
+### Option 2: From Source
+
 1. Clone this repository:
 ```bash
 git clone <repository-url>
@@ -48,7 +67,12 @@ query:
 
 ## Usage
 
-Run the application:
+### Using AppImage:
+```bash
+./ES-CLI-x86_64.AppImage
+```
+
+### Using from source:
 ```bash
 python main.py
 ```
@@ -114,12 +138,25 @@ You can place the config file in:
 - urwid 2.1.2+
 - PyYAML 6.0+
 
+## Building AppImage
+
+To build an AppImage locally, see [BUILD.md](BUILD.md) for detailed instructions.
+
+Quick build:
+```bash
+./build_appimage.sh
+```
+
+The AppImage will be created in `build/ES-CLI-x86_64.AppImage`.
+
 ## Architecture
 
 - **main.py**: Entry point and application initialization
 - **config.py**: Configuration file handling
 - **es_client.py**: Elasticsearch client wrapper with KQL and ESQL support
 - **ui.py**: NCurses UI components (query input, results table, main window)
+- **build_appimage.sh**: Script to build AppImage
+- **BUILD.md**: Detailed build instructions
 
 ## Limitations
 
