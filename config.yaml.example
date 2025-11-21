@@ -1,0 +1,39 @@
+# Elasticsearch connection configuration
+elasticsearch:
+  # List of Elasticsearch node URLs (required)
+  # Use http:// for non-SSL or https:// for SSL connections
+  hosts:
+    - http://localhost:9200
+    # - https://elasticsearch.example.com:9200  # Example with SSL
+  
+  # Basic authentication (optional - uncomment to use)
+  # basic_auth:
+  #   username: "elastic"
+  #   password: "changeme"
+  
+  # SSL/TLS certificate verification (optional)
+  # Note: SSL is automatically enabled when using https:// URLs in hosts
+  # Set to false to disable certificate verification (not recommended for production)
+  # verify_certs: true
+  
+  # Path to CA certificate file (optional, required if verify_certs is true and using custom CA)
+  # ca_certs: "/path/to/ca.crt"
+  
+  # Other optional Elasticsearch client settings:
+  # - timeout: Request timeout in seconds (default: varies by SDK)
+  # - max_retries: Maximum number of retries (default: 3)
+  # - http_compress: Enable HTTP compression (default: false)
+  # - api_key: API key authentication (alternative to basic_auth)
+  # - bearer_auth: Bearer token authentication
+
+# Default index pattern to search (optional)
+# Use "*" to search all indices, or specify a pattern like "logs-*"
+default_index: "*"
+
+# Query settings
+query:
+  # Default number of results per page (optional)
+  default_size: 100
+  
+  # Maximum number of results per page (optional)
+  max_size: 10000
